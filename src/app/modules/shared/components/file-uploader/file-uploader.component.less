@@ -1,0 +1,121 @@
+@import "../../../../../less/@colors.less";
+@import "../../../../../less/@media-size.less";
+.upload-container{
+
+    .select-files{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            .my-drop-zone {
+                border: dotted 3px @color-primary;
+                transition: border-color 0.5s ease;
+                height: 200px;
+                padding: 50px;
+                color: @color-primary-200;
+                border-radius: 5px;
+                text-align: center;
+                &.nv-file-over {
+                    border-color: @color-primary-200;
+                }
+                @media @bootstrap-xs, @bootstrap-sm{
+                    font-size: .8em;
+                    padding: 30px;
+                    height: 150px;
+                }
+              }
+              .file-icon{
+                  position: absolute;
+                  bottom: 0px;
+                  display: flex;
+                  justify-content: center;
+                  width: 100%;
+                  margin-bottom: 1em;
+                i{
+                    font-size: 3em;
+                    color:@color-gray-g3;
+                    @media @bootstrap-xs, @bootstrap-sm{
+                        font-size: 2em;
+                    }
+                }
+                input[type=file] {
+                    position: absolute;
+                    bottom: 0px;
+                    opacity: 0;
+                  }
+              }
+
+
+          }
+    }
+    .queue{
+        display: flex;
+        justify-content: center;
+        margin-top: 1em;
+        font-size: .9em;
+        .table  {
+            @media @bootstrap-xs, @bootstrap-sm{
+                font-size: .9em;
+                thead{
+                    tr{
+                        th:nth-of-type(2){
+                            display: none;
+                        }
+                        th:nth-of-type(3){
+                            display: none;
+                        }
+                        th:nth-of-type(4){
+                            display: none;
+                        }
+                    }
+                }
+            }
+            width: 50%;
+            tbody{
+                tr{
+                    td{
+                        vertical-align: middle;
+                    }
+                    .actions{
+                        padding:0px;
+                    }
+                    @media @bootstrap-xs, @bootstrap-sm{
+                        td:nth-of-type(2){
+                            display: none;
+                        }
+                        td:nth-of-type(3){
+                            display: none;
+                        }
+                        td:nth-of-type(4){
+                            display: none;
+                        }
+                    }
+                }
+            }
+            tfoot{
+                tr{
+                    td:nth-of-type(1){
+                        .total{
+                            display: flex;
+                            vertical-align: middle;
+                            .progress{
+                                width: 80%;
+                                margin-top: 1em;
+                            }
+                        }
+                        .botonera{
+                            display: flex;
+                            vertical-align: middle;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+}

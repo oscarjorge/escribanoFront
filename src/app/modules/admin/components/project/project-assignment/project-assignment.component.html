@@ -1,0 +1,48 @@
+<div *ngIf="item" class="assigment-container">
+  <div class="list-container">
+    <h5>No asignados</h5>
+    <div cdkDropList #notAssignedList="cdkDropList" [cdkDropListData]="notAssigned"
+      [cdkDropListConnectedTo]="[assignedList]" class="list" (cdkDropListDropped)="drop($event)">
+      <div class="list-box" *ngFor="let item of notAssigned" cdkDrag>
+        <img *ngIf=" item.user?.pic" class="avatar" [attr.src]="'data:image/jpg;base64,' + item.user?.pic | safeBlob">
+        <span>
+          <div>{{item.user.nickName}}</div>
+          <div>{{item.user.name}} {{item.user.surname}}</div>
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="list-container">
+    <h5>Asignados</h5>
+    <div cdkDropList #assignedList="cdkDropList" [cdkDropListData]="assigned"
+      [cdkDropListConnectedTo]="[notAssignedList]" class="list" (cdkDropListDropped)="drop($event)">
+      <div class="list-box" *ngFor="let item of assigned" cdkDrag>
+        <div>
+          <img *ngIf=" item.user?.pic" class="avatar" [attr.src]="'data:image/jpg;base64,' + item.user?.pic | safeBlob">
+          <span>
+            <div>{{item.user.nickName}}</div>
+            <div>{{item.user.name}} {{item.user.surname}}</div>
+          </span>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <input matInput [matDatepicker]="startDate" placeholder="Fecha de inicio" [min]="minDate" [max]="maxDate" [(ngModel)]="item.startDate">
+            <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+            <mat-datepicker #startDate></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [matDatepicker]="endDate" placeholder="Fecha de fin" [min]="minDate" [max]="maxDate" [(ngModel)]="item.endDate">
+            <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+            <mat-datepicker #endDate></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

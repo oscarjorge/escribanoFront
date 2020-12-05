@@ -1,0 +1,313 @@
+2019-05-15 16:57:59.643 +02:00 [Information] User profile not available. Using '"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-1528701800-26037016-1895554036-4046256587-3858628095\DataProtection"' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-05-15 16:57:59.835 +02:00 [Information] Creating key {9378b6c4-3a69-4b01-9463-9cefc00f007c} with creation date 2019-05-15 14:57:59Z, activation date 2019-05-15 14:57:59Z, and expiration date 2019-08-13 14:57:59Z.
+2019-05-15 16:58:00.241 +02:00 [Information] Request starting HTTP/1.1 GET http://lubara.antonioescribano.es/  
+2019-05-15 16:58:00.315 +02:00 [Warning] Failed to determine the https port for redirect.
+2019-05-15 16:58:00.357 +02:00 [Information] Request finished in 115.7833ms 404 
+2019-05-15 17:14:29.433 +02:00 [Information] Request starting HTTP/1.1 GET http://lubara.antonioescribano.es/  
+2019-05-15 17:14:29.434 +02:00 [Information] Request finished in 1.0451ms 404 
+2019-05-15 19:04:52.780 +02:00 [Information] User profile not available. Using '"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-1528701800-26037016-1895554036-4046256587-3858628095\DataProtection"' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-05-15 19:04:53.316 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/  
+2019-05-15 19:04:53.595 +02:00 [Information] Request finished in 280.0881ms 404 
+2019-05-15 19:12:03.977 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/  
+2019-05-15 19:12:03.977 +02:00 [Information] Request finished in 0.8309ms 404 
+2019-05-15 19:12:17.788 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/  
+2019-05-15 19:12:17.788 +02:00 [Information] Request finished in 0.3854ms 404 
+2019-05-15 19:13:43.988 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/userpic  
+2019-05-15 19:13:43.990 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:13:43.992 +02:00 [Information] Request finished in 3.9396ms 204 
+2019-05-15 19:13:44.345 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/api/userpic  
+2019-05-15 19:13:44.405 +02:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2019-05-15 19:13:44.468 +02:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'."
+2019-05-15 19:13:44.468 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:13:44.478 +02:00 [Information] Request finished in 133.0919ms 404 
+2019-05-15 19:17:49.117 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/userpic  
+2019-05-15 19:17:49.117 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:17:49.118 +02:00 [Information] Request finished in 0.3951ms 204 
+2019-05-15 19:17:49.184 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/api/userpic  
+2019-05-15 19:17:49.185 +02:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2019-05-15 19:17:49.185 +02:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'."
+2019-05-15 19:17:49.185 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:17:49.188 +02:00 [Information] Request finished in 3.6722ms 404 
+2019-05-15 19:37:57.475 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/userpic  
+2019-05-15 19:37:57.476 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:37:57.476 +02:00 [Information] Request finished in 0.4992ms 204 
+2019-05-15 19:37:57.551 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/api/userpic  
+2019-05-15 19:37:57.552 +02:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2019-05-15 19:37:57.552 +02:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'."
+2019-05-15 19:37:57.552 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:37:57.552 +02:00 [Information] Request finished in 0.8696ms 404 
+2019-05-15 19:40:26.918 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/token/logon  
+2019-05-15 19:40:26.919 +02:00 [Information] CORS policy execution failed.
+2019-05-15 19:40:26.919 +02:00 [Information] Request origin "https://lubarafront.oscarjorge.es" does not have permission to access the resource.
+2019-05-15 19:40:26.919 +02:00 [Information] Request finished in 0.6313ms 204 
+2019-05-15 19:42:05.216 +02:00 [Information] User profile not available. Using '"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-1528701800-26037016-1895554036-4046256587-3858628095\DataProtection"' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-05-15 19:42:05.486 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/  
+2019-05-15 19:42:05.548 +02:00 [Information] Request finished in 63.0266ms 404 
+2019-05-15 19:42:10.297 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/token/logon  
+2019-05-15 19:42:10.300 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:42:10.302 +02:00 [Information] Request finished in 4.9608ms 204 
+2019-05-15 19:42:10.353 +02:00 [Information] Request starting HTTP/1.1 POST https://lubara.antonioescribano.es/api/token/logon application/json 60
+2019-05-15 19:42:10.354 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:42:10.359 +02:00 [Information] Executing endpoint '"PorjectsManagement.Controllers.TokenController.Logon (PorjectsManagement)"'
+2019-05-15 19:42:10.379 +02:00 [Information] Route matched with "{action = \"Logon\", controller = \"Token\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Logon(BussinesModel.Login.LoginModel)" on controller "PorjectsManagement.Controllers.TokenController" ("PorjectsManagement").
+2019-05-15 19:42:10.777 +02:00 [Information] Executing action method "PorjectsManagement.Controllers.TokenController.Logon (PorjectsManagement)" - Validation state: Valid
+2019-05-15 19:42:11.005 +02:00 [Information] Entity Framework Core "2.2.4-servicing-10062" initialized '"ProjectsManagementContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-05-15 19:42:12.036 +02:00 [Information] Executed DbCommand ("29"ms) [Parameters=["@__nick_0='?' (Size = 50) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[IdUser], [u].[Active], [u].[Confirmed], [u].[Mail], [u].[Name], [u].[NickName], [u].[Password], [u].[Surname], [u].[TempLapsed], [u].[TempPassword]
+FROM [UserApp] AS [u]
+WHERE [u].[NickName] = @__nick_0
+ORDER BY [u].[IdUser]"
+2019-05-15 19:42:12.127 +02:00 [Information] Executed DbCommand ("36"ms) [Parameters=["@__nick_0='?' (Size = 50) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u.RoleUser].[IdRoleUser], [u.RoleUser].[IdRole], [u.RoleUser].[IdUser], [r.IdRoleNavigation].[IdRole], [r.IdRoleNavigation].[Description], [r.IdRoleNavigation].[Menu]
+FROM [RoleUser] AS [u.RoleUser]
+INNER JOIN [Role] AS [r.IdRoleNavigation] ON [u.RoleUser].[IdRole] = [r.IdRoleNavigation].[IdRole]
+INNER JOIN (
+    SELECT TOP(1) [u0].[IdUser]
+    FROM [UserApp] AS [u0]
+    WHERE [u0].[NickName] = @__nick_0
+    ORDER BY [u0].[IdUser]
+) AS [t] ON [u.RoleUser].[IdUser] = [t].[IdUser]
+ORDER BY [t].[IdUser]"
+2019-05-15 19:42:12.306 +02:00 [Information] Executed action method "PorjectsManagement.Controllers.TokenController.Logon (PorjectsManagement)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1526.0428ms.
+2019-05-15 19:42:12.313 +02:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2019-05-15 19:42:12.325 +02:00 [Information] Executed action "PorjectsManagement.Controllers.TokenController.Logon (PorjectsManagement)" in 1942.0867ms
+2019-05-15 19:42:12.325 +02:00 [Information] Executed endpoint '"PorjectsManagement.Controllers.TokenController.Logon (PorjectsManagement)"'
+2019-05-15 19:42:12.325 +02:00 [Information] Request finished in 1971.8317ms 200 application/json; charset=utf-8
+2019-05-15 19:42:12.410 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/userpic  
+2019-05-15 19:42:12.410 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:42:12.410 +02:00 [Information] Request finished in 0.4834ms 204 
+2019-05-15 19:42:12.476 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/api/userpic  
+2019-05-15 19:42:12.484 +02:00 [Information] Successfully validated the token.
+2019-05-15 19:42:12.485 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:42:12.489 +02:00 [Information] Request finished in 12.3754ms 404 
+2019-05-15 19:42:18.113 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/userpic  
+2019-05-15 19:42:18.113 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:42:18.113 +02:00 [Information] Request finished in 0.3567ms 204 
+2019-05-15 19:42:18.201 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/api/userpic  
+2019-05-15 19:42:18.201 +02:00 [Information] Successfully validated the token.
+2019-05-15 19:42:18.201 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:42:18.201 +02:00 [Information] Request finished in 0.8335ms 404 
+2019-05-15 19:42:26.753 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/project  
+2019-05-15 19:42:26.753 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:42:26.754 +02:00 [Information] Request finished in 0.4078ms 204 
+2019-05-15 19:42:26.818 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/api/project  
+2019-05-15 19:42:26.818 +02:00 [Information] Successfully validated the token.
+2019-05-15 19:42:26.818 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:42:26.818 +02:00 [Information] Executing endpoint '"PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)"'
+2019-05-15 19:42:26.824 +02:00 [Information] Route matched with "{action = \"Get\", controller = \"Project\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[BussinesModel.ProjectModel]] Get()" on controller "PorjectsManagement.Controllers.ProjectController" ("PorjectsManagement").
+2019-05-15 19:42:26.831 +02:00 [Information] Authorization was successful.
+2019-05-15 19:42:26.832 +02:00 [Information] Executing action method "PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)" - Validation state: Valid
+2019-05-15 19:42:26.837 +02:00 [Information] Entity Framework Core "2.2.4-servicing-10062" initialized '"ProjectsManagementContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-05-15 19:42:26.853 +02:00 [Information] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[IdProject], [p].[Description], [p].[EndDate], [p].[ProjectManager], [p].[ProjectNumber], [p].[StartDate]
+FROM [Project] AS [p]"
+2019-05-15 19:42:26.878 +02:00 [Information] Executed action method "PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 45.8907ms.
+2019-05-15 19:42:26.878 +02:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[BussinesModel.ProjectModel, BussinesModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2019-05-15 19:42:26.880 +02:00 [Information] Executed action "PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)" in 56.3764ms
+2019-05-15 19:42:26.880 +02:00 [Information] Executed endpoint '"PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)"'
+2019-05-15 19:42:26.880 +02:00 [Information] Request finished in 62.6309ms 200 application/json; charset=utf-8
+2019-05-15 19:42:55.349 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/project  
+2019-05-15 19:42:55.349 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:42:55.349 +02:00 [Information] Request finished in 0.4219ms 204 
+2019-05-15 19:42:55.401 +02:00 [Information] Request starting HTTP/1.1 POST https://lubara.antonioescribano.es/api/project application/json 177
+2019-05-15 19:42:55.401 +02:00 [Information] Successfully validated the token.
+2019-05-15 19:42:55.401 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:42:55.401 +02:00 [Information] Executing endpoint '"PorjectsManagement.Controllers.ProjectController.Post (PorjectsManagement)"'
+2019-05-15 19:42:55.405 +02:00 [Information] Route matched with "{action = \"Post\", controller = \"Project\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[BussinesModel.ProjectModel] Post(BussinesModel.ProjectModel)" on controller "PorjectsManagement.Controllers.ProjectController" ("PorjectsManagement").
+2019-05-15 19:42:55.405 +02:00 [Information] Authorization was successful.
+2019-05-15 19:42:55.422 +02:00 [Information] Executing action method "PorjectsManagement.Controllers.ProjectController.Post (PorjectsManagement)" - Validation state: Valid
+2019-05-15 19:42:55.523 +02:00 [Information] Entity Framework Core "2.2.4-servicing-10062" initialized '"ProjectsManagementContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-05-15 19:42:55.588 +02:00 [Information] Executed DbCommand ("12"ms) [Parameters=["@p0='?' (Size = 2000) (DbType = AnsiString), @p1='?' (DbType = DateTime), @p2='?' (Size = 250) (DbType = AnsiString), @p3='?' (Size = 250) (DbType = AnsiString), @p4='?' (DbType = DateTime)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Project] ([Description], [EndDate], [ProjectManager], [ProjectNumber], [StartDate])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [IdProject]
+FROM [Project]
+WHERE @@ROWCOUNT = 1 AND [IdProject] = scope_identity();"
+2019-05-15 19:42:55.646 +02:00 [Information] Executed action method "PorjectsManagement.Controllers.ProjectController.Post (PorjectsManagement)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 223.8263ms.
+2019-05-15 19:42:55.648 +02:00 [Information] Executing ObjectResult, writing value of type '"BussinesModel.ProjectModel"'.
+2019-05-15 19:42:55.654 +02:00 [Information] Executed action "PorjectsManagement.Controllers.ProjectController.Post (PorjectsManagement)" in 248.8747ms
+2019-05-15 19:42:55.655 +02:00 [Information] Executed endpoint '"PorjectsManagement.Controllers.ProjectController.Post (PorjectsManagement)"'
+2019-05-15 19:42:55.658 +02:00 [Information] Request finished in 256.7818ms 200 application/json; charset=utf-8
+2019-05-15 19:43:06.724 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/user  
+2019-05-15 19:43:06.725 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:43:06.725 +02:00 [Information] Request finished in 0.6445ms 204 
+2019-05-15 19:43:06.777 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/api/user  
+2019-05-15 19:43:06.777 +02:00 [Information] Successfully validated the token.
+2019-05-15 19:43:06.777 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:43:06.777 +02:00 [Information] Executing endpoint '"PorjectsManagement.Controllers.UserController.GetAllUsers (PorjectsManagement)"'
+2019-05-15 19:43:06.780 +02:00 [Information] Route matched with "{action = \"GetAllUsers\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[BussinesModel.UserModel]] GetAllUsers()" on controller "PorjectsManagement.Controllers.UserController" ("PorjectsManagement").
+2019-05-15 19:43:06.781 +02:00 [Information] Authorization was successful.
+2019-05-15 19:43:06.781 +02:00 [Information] Executing action method "PorjectsManagement.Controllers.UserController.GetAllUsers (PorjectsManagement)" - Validation state: Valid
+2019-05-15 19:43:23.217 +02:00 [Information] Executed action "PorjectsManagement.Controllers.UserController.GetAllUsers (PorjectsManagement)" in 16436.0208ms
+2019-05-15 19:43:23.217 +02:00 [Information] Executed endpoint '"PorjectsManagement.Controllers.UserController.GetAllUsers (PorjectsManagement)"'
+2019-05-15 19:43:23.218 +02:00 [Error] Connection ID ""1369094296921220364"", Request ID ""8000a50d-0002-1300-b63f-84710c7967bb"": An unhandled exception was thrown by the application.
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Services.UserService.GetUsers() in C:\Users\ilitio\source\Workspaces\PorjectsManagement\Services\Services\UserService.cs:line 22
+   at PorjectsManagement.Controllers.UserController.GetAllUsers() in C:\Users\ilitio\source\Workspaces\PorjectsManagement\PorjectsManagement\Controllers\UserController.cs:line 41
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2019-05-15 19:43:23.279 +02:00 [Information] Request finished in 16502.0462ms 500 
+2019-05-15 19:43:25.106 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/project  
+2019-05-15 19:43:25.107 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:43:25.107 +02:00 [Information] Request finished in 0.3698ms 204 
+2019-05-15 19:43:25.155 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/api/project  
+2019-05-15 19:43:25.155 +02:00 [Information] Successfully validated the token.
+2019-05-15 19:43:25.155 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:43:25.156 +02:00 [Information] Executing endpoint '"PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)"'
+2019-05-15 19:43:25.156 +02:00 [Information] Route matched with "{action = \"Get\", controller = \"Project\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[BussinesModel.ProjectModel]] Get()" on controller "PorjectsManagement.Controllers.ProjectController" ("PorjectsManagement").
+2019-05-15 19:43:25.156 +02:00 [Information] Authorization was successful.
+2019-05-15 19:43:25.156 +02:00 [Information] Executing action method "PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)" - Validation state: Valid
+2019-05-15 19:43:25.156 +02:00 [Information] Entity Framework Core "2.2.4-servicing-10062" initialized '"ProjectsManagementContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-05-15 19:43:25.157 +02:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[IdProject], [p].[Description], [p].[EndDate], [p].[ProjectManager], [p].[ProjectNumber], [p].[StartDate]
+FROM [Project] AS [p]"
+2019-05-15 19:43:25.176 +02:00 [Information] Executed action method "PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 19.5675ms.
+2019-05-15 19:43:25.176 +02:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[BussinesModel.ProjectModel, BussinesModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2019-05-15 19:43:25.176 +02:00 [Information] Executed action "PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)" in 20.2021ms
+2019-05-15 19:43:25.176 +02:00 [Information] Executed endpoint '"PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)"'
+2019-05-15 19:43:25.176 +02:00 [Information] Request finished in 21.1069ms 200 application/json; charset=utf-8
+2019-05-15 19:43:29.934 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/userpic  
+2019-05-15 19:43:29.935 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:43:29.935 +02:00 [Information] Request finished in 0.3868ms 204 
+2019-05-15 19:43:29.993 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/api/project  
+2019-05-15 19:43:29.993 +02:00 [Information] Successfully validated the token.
+2019-05-15 19:43:29.994 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:43:29.994 +02:00 [Information] Executing endpoint '"PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)"'
+2019-05-15 19:43:29.994 +02:00 [Information] Route matched with "{action = \"Get\", controller = \"Project\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[BussinesModel.ProjectModel]] Get()" on controller "PorjectsManagement.Controllers.ProjectController" ("PorjectsManagement").
+2019-05-15 19:43:29.994 +02:00 [Information] Authorization was successful.
+2019-05-15 19:43:29.994 +02:00 [Information] Executing action method "PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)" - Validation state: Valid
+2019-05-15 19:43:29.995 +02:00 [Information] Entity Framework Core "2.2.4-servicing-10062" initialized '"ProjectsManagementContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-05-15 19:43:29.997 +02:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[IdProject], [p].[Description], [p].[EndDate], [p].[ProjectManager], [p].[ProjectNumber], [p].[StartDate]
+FROM [Project] AS [p]"
+2019-05-15 19:43:29.997 +02:00 [Information] Executed action method "PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.923ms.
+2019-05-15 19:43:29.997 +02:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[BussinesModel.ProjectModel, BussinesModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2019-05-15 19:43:29.997 +02:00 [Information] Executed action "PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)" in 3.5731ms
+2019-05-15 19:43:29.997 +02:00 [Information] Executed endpoint '"PorjectsManagement.Controllers.ProjectController.Get (PorjectsManagement)"'
+2019-05-15 19:43:29.998 +02:00 [Information] Request finished in 4.5327ms 200 application/json; charset=utf-8
+2019-05-15 19:43:30.107 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/api/userpic  
+2019-05-15 19:43:30.108 +02:00 [Information] Successfully validated the token.
+2019-05-15 19:43:30.108 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:43:30.108 +02:00 [Information] Request finished in 0.706ms 404 
+2019-05-15 19:45:41.672 +02:00 [Information] Request starting HTTP/1.1 OPTIONS https://lubara.antonioescribano.es/api/user  
+2019-05-15 19:45:41.673 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:45:41.673 +02:00 [Information] Request finished in 0.4207ms 204 
+2019-05-15 19:45:41.727 +02:00 [Information] Request starting HTTP/1.1 GET https://lubara.antonioescribano.es/api/user  
+2019-05-15 19:45:41.727 +02:00 [Information] Successfully validated the token.
+2019-05-15 19:45:41.727 +02:00 [Information] CORS policy execution successful.
+2019-05-15 19:45:41.727 +02:00 [Information] Executing endpoint '"PorjectsManagement.Controllers.UserController.GetAllUsers (PorjectsManagement)"'
+2019-05-15 19:45:41.727 +02:00 [Information] Route matched with "{action = \"GetAllUsers\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[BussinesModel.UserModel]] GetAllUsers()" on controller "PorjectsManagement.Controllers.UserController" ("PorjectsManagement").
+2019-05-15 19:45:41.728 +02:00 [Information] Authorization was successful.
+2019-05-15 19:45:41.728 +02:00 [Information] Executing action method "PorjectsManagement.Controllers.UserController.GetAllUsers (PorjectsManagement)" - Validation state: Valid
+2019-05-15 19:45:58.002 +02:00 [Information] Executed action "PorjectsManagement.Controllers.UserController.GetAllUsers (PorjectsManagement)" in 16274.0877ms
+2019-05-15 19:45:58.002 +02:00 [Information] Executed endpoint '"PorjectsManagement.Controllers.UserController.GetAllUsers (PorjectsManagement)"'
+2019-05-15 19:45:58.002 +02:00 [Error] Connection ID ""5620492349453968178"", Request ID ""80012333-0003-4e00-b63f-84710c7967bb"": An unhandled exception was thrown by the application.
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Services.UserService.GetUsers() in C:\Users\ilitio\source\Workspaces\PorjectsManagement\Services\Services\UserService.cs:line 22
+   at PorjectsManagement.Controllers.UserController.GetAllUsers() in C:\Users\ilitio\source\Workspaces\PorjectsManagement\PorjectsManagement\Controllers\UserController.cs:line 41
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2019-05-15 19:45:58.005 +02:00 [Information] Request finished in 16277.5909ms 500 

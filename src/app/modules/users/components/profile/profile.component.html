@@ -1,0 +1,40 @@
+<top-bar></top-bar>
+<div class="container">
+  <div>
+    <card-extended>
+      <card-extended-title>
+        <span>Datos de usuario</span>
+      </card-extended-title>
+      <card-extended-panel>
+          <form *ngIf="user" [formGroup]="form">
+              <div>
+                  <mat-form-field>
+                      <input matInput placeholder="Nombre de usuario" formControlName="nick">
+                    </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Nombre" formControlName="name">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Apellido" formControlName="surname">
+                  </mat-form-field>
+              </div>
+              <div>
+                <button mat-raised-button color="accent" class="float-right" (click)="save()">Guardar</button>
+              </div>
+            </form>
+      </card-extended-panel>
+    </card-extended>
+  </div>
+  <div>
+      <card-extended>
+          <card-extended-title>
+            <span>Imagen de perfil</span>
+          </card-extended-title>
+          <card-extended-panel>
+              <custom-file-uploader (onUploaded)="uploaded($event)" (onError)="error($event)" [url]="url"
+              [multiple]="multiple">
+            </custom-file-uploader>
+            </card-extended-panel>
+            </card-extended>
+  </div>
+</div>

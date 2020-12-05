@@ -1,0 +1,49 @@
+@import "../../../../../less/@colors.less";
+.login-container{
+    width: 100%;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.full-width{
+    width: 100%
+}
+.layer1{
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+    .container-logo{
+        animation-name: fadein;
+        animation-duration: 5s;
+        background-color: @color-neutral-8;
+        border-radius: 10px;
+        img{
+            zoom: 0.12;
+        }
+    }
+    
+}
+.layer2{
+    .mat-card{
+        animation-name: fadein;
+        animation-duration: 2s;
+        background-color: fade(@color-primary, 0%);
+        .mat-card-header{
+            color: @color-neutral-8;
+        }
+    }
+}
+
+@keyframes fadein{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes fade{
+    0% {background-color: transparent;}
+    100% {opacity: white;}
+}

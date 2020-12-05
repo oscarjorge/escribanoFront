@@ -1,0 +1,23 @@
+<top-bar></top-bar>
+<div class="user-container">
+    <mat-card>
+        <form [formGroup]="form" (ngSubmit)="send()">
+          <div class="container mt-3">
+              <mat-form-field style="width: 100%" class="mat-headline">
+                  <input matInput placeholder="Nombre de usuario" type="email" formControlName="nick" (keypress)="onKeyPress($event)">
+
+              </mat-form-field>
+            <mat-form-field style="width: 100%" class="mat-headline">
+                <input matInput placeholder="Email" type="email" formControlName="email">
+                <mat-icon matSuffix>mail</mat-icon>
+            </mat-form-field>
+
+            <button mat-raised-button [disabled]="sending" [color]="'accent'" type="submit" class="full-width">
+              <i class="fas" [ngClass]="{'fa-paper-plane':!sending, 'fa-spinner':sending,'fa-pulse':sending}"></i> Enviar
+          </button>
+
+        </div>
+        </form>
+      </mat-card>
+
+</div>

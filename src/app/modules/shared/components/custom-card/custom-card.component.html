@@ -1,0 +1,34 @@
+<mat-card [id]="id">
+    <mat-card-header>
+      <span class="first-row">
+        <span class="left" [ngClass]="{'pointer': !disabled && expandable && !waitExpand}" (click)="onClickButtonExpand()">
+          <div class="first-row-icon">
+            <span *ngIf="searching" class="fas fa-spinner fa-pulse" [@disabledIconState]="collapsedCard? 'disabled': 'enabled'"></span>
+            <span *ngIf="iconAwesomeTitle && !searching" [ngClass]="iconAwesomeTitle" [@disabledIconState]="collapsedCard? 'disabled': 'enabled'"></span>
+            <mat-icon *ngIf="iconMaterialTitle && !searching" [@disabledIconState]="collapsedCard? 'disabled': 'enabled'">{{iconMaterialTitle }}</mat-icon>
+          </div>
+          <div class="title">
+            <mat-card-title>
+              {{title}}
+            </mat-card-title>
+            <mat-card-subtitle *ngIf="subtitle">
+                {{subtitle}}
+              </mat-card-subtitle>
+          </div>
+
+        </span>
+        <span class="right" *ngIf="!disabled">
+          <ng-content select=".wildcard1"></ng-content>
+          <mat-icon *ngIf="expandable && !waitExpand" class="pointer" (click)="onClickButtonExpand()" [@rotatedState]="collapsedCard? 'rotated': 'default'">keyboard_arrow_up</mat-icon>
+          <i *ngIf="waitExpand" class="fas fa-spinner fa-pulse"></i>
+        </span>
+      </span>
+      <span class="second-row">
+        <ng-content select=".second-row-content"></ng-content>
+      </span>
+    </mat-card-header>
+    <div class="body-container" [@collapseCardState]="collapsedCard? 'collapse': 'default'" [ngClass]="{'overflow-scroll': overflowScroll}">
+      <ng-content select=".body-content"></ng-content>
+    </div>
+  </mat-card>
+

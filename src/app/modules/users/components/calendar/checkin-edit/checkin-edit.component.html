@@ -1,0 +1,100 @@
+<top-bar></top-bar>
+<div class="container">
+  <div class="navigation mb-2">
+    <button mat-raised-button color="accent" (click)="onPrevious()">Anterior</button>
+    <span>{{getDateFormat()}}</span>
+    <button mat-raised-button color="accent" (click)="onNext()">Siguiente</button>
+  </div>
+  <mat-form-field>
+    <mat-label>Imputaciones</mat-label>
+    <mat-select (selectionChange)="selectionChange($event)" [(value)]="selectImpValue">
+      <mat-option [value]="-1">
+        Nuevo
+      </mat-option>
+      <mat-option *ngFor="let event of events" [value]="event.id">
+        {{event.title}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <form *ngIf="form" [formGroup]="form">
+    <div class="row-form">
+      <mat-form-field>
+        <mat-label>Proyectos</mat-label>
+        <mat-select (selectionChange)="selectionChangeProject($event)" formControlName="project">
+          <mat-option *ngFor="let projectUser of projectsUser" [value]="projectUser.idProject">
+            {{projectUser.project.description}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Título" formControlName="title">
+      </mat-form-field>
+    </div>
+    <div class="row-form">
+      <section>
+          <mat-form-field>
+            <mat-label>Start Date</mat-label>
+            <input matInput formControlName="date_start" [matDatepicker]="date_start_picker" required autocomplete="false">
+            <mat-datepicker-toggle matSuffix [for]="date_start_picker"></mat-datepicker-toggle>
+            <mat-datepicker #date_start_picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label>Start Time</mat-label>
+              <input matInput formControlName="time_start" [ngxTimepicker]="time_start_picker" required readonly>
+              <ngx-material-timepicker [ngxMaterialTimepickerTheme]="clockTheme" #time_start_picker></ngx-material-timepicker>
+          </mat-form-field>
+      </section>
+      <section>
+          <mat-form-field>
+            <mat-label>End Date</mat-label>
+            <input matInput formControlName="date_end" [matDatepicker]="date_end_picker" required autocomplete="false">
+            <mat-datepicker-toggle matSuffix [for]="date_end_picker"></mat-datepicker-toggle>
+            <mat-datepicker #date_end_picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label>End Time</mat-label>
+              <input matInput formControlName="time_end" [ngxTimepicker]="time_end_picker" required readonly>
+              <ngx-material-timepicker [ngxMaterialTimepickerTheme]="clockTheme" #time_end_picker></ngx-material-timepicker>
+          </mat-form-field>
+      </section>
+    </div>
+    <div class="row-form">
+      <mat-form-field class="text-area">
+        <textarea matInput placeholder="Comentario" formControlName="comments"></textarea>
+      </mat-form-field>
+      <mat-slide-toggle formControlName="finished">Finalizado</mat-slide-toggle>
+    </div>
+
+    <mat-checkbox (change)="currentPositionChange($event)">Establecer mi ubicación
+      actual</mat-checkbox>
+
+
+  </form>
+  <div class="card-container">
+    <card-extended [expanded]="false">
+      <card-extended-title>
+        <span>Localización</span>
+      </card-extended-title>
+      <card-extended-panel>
+          <div class="body-content">
+              <mat-form-field>
+                <input matInput placeholder="Buscar dirección" autocorrect="off" autocapitalize="off" spellcheck="off"
+                  type="text" #search (keydown.enter)="$event.preventDefault()">
+              </mat-form-field>
+              <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                <agm-marker [latitude]="lat" [longitude]="lng" (dragEnd)="markerDragEnd($event)" [markerDraggable]="true">
+                </agm-marker>
+              </agm-map>
+            </div>
+      </card-extended-panel>
+    </card-extended>
+  </div>
+  <div>
+    <button mat-button (click)="onNoClick()">Ir al calendario</button>
+    <button mat-raised-button *ngIf="event" (click)="onDelete()">Eliminar</button>
+    <button mat-raised-button color="accent" (click)="onClick()">Aceptar</button>
+  </div>
+</div>
+
+
+<app-loading [loading]="loading"></app-loading>

@@ -1,0 +1,50 @@
+<form *ngIf="item" [formGroup]="form">
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Descripción" formControlName="description">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Número de proyecto" formControlName="projectNumber">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput [matDatepicker]="startDate" placeholder="Fecha de inicio" formControlName="startDate">
+      <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+      <mat-datepicker #startDate></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="endDate" placeholder="Fecha de fin" formControlName="endDate">
+      <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+      <mat-datepicker #endDate></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Contacto" formControlName="projectManager">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="mr-2">
+      <input matInput placeholder="Color primario" formControlName="colorPrimary"
+        [errorStateMatcher]="matcher" [style.background]="mainColor" [colorPicker]="colorPrimary" [cpPosition]="'right'"
+        (colorPickerChange)="onMainColorChange($event)">
+      <mat-error>
+        <span *ngIf="!form.get('colorPrimary').valid && form.get('colorPrimary').touched">Elige el color principal
+        </span>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Color secundario" formControlName="colorSecondary" [errorStateMatcher]="matcher"
+        [style.background]="secondaryColor" [colorPicker]="colorSecondary" [cpPosition]="'right'"
+        (colorPickerChange)="onSecondaryColorChange($event)">
+      <mat-error>
+        <span *ngIf="!form.get('colorSecondary').valid && form.get('colorSecondary').touched">Elige el color secundario</span>
+      </mat-error>
+    </mat-form-field>
+        <mat-checkbox formControlName="isImputable">Imputable</mat-checkbox>
+
+  </div>
+
+  <admin-project-assignment class="body-content" [item]="item"></admin-project-assignment>
+  <button mat-raised-button color="accent" class="float-right" (click)="save()">Guardar</button>
+</form>

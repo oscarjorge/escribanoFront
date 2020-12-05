@@ -1,0 +1,109 @@
+@import "../../../../../less/@media-size.less";
+@import "../../../../../less/@colors.less";
+@color-input-primary: @color-neutral-8;
+
+.side-bar{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 75% 25%;
+
+    display:-ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 75% 25%;
+    
+    position: fixed;
+    z-index: 1031;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    background: @color-primary-800;// url(/assets/img/brand-header.png) right bottom no-repeat;
+    background-size: cover;
+    transition: margin ease-in-out 0.5s;
+    height: calc(100vh ~"-" @top-bar-height);
+    width: 35%;
+    @media (max-width: 1100px) {
+        width: 50%;
+    }
+    @media (max-width: 767px) {
+        width: 80%;
+    }
+    @media (max-width: 480px) {
+        width: 90%;
+    }
+    
+   .grid-item:nth-child(1){
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+    }
+    .grid-item:nth-child(2){
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
+    }
+
+    .menu-side-bar{
+        top:0px;
+        padding: 5px;
+        ul.sidebar-nav{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: @color-primary-400;
+            li{
+                cursor: pointer;
+                list-style: none;
+                
+                line-height: 40px;
+                text-indent: 20px;
+                color: #fff!important;
+                display: block;
+                text-decoration: none;
+                width: 100%;
+                -webkit-transition: background .5s;
+                -moz-transition: background .5s;
+                -o-transition: background .5s;
+                -ms-transition: background .5s;
+                transition: background .5s;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                i{
+                    float: left;
+                    margin: 10px -10px;
+                }
+                span{
+                    text-indent:0px;
+                    margin-top: 10px;
+                }
+                
+            }
+            li:not(:first-child){
+                border-top: 1px solid @color-primary;
+            }
+            li:hover{
+                color: #fff;
+                background: rgba(255, 255, 255, 0.2);
+                text-decoration: none;
+            }
+            li:active{
+                background: #0072ce;
+                // pointer-events: none;
+            }
+            li .subicon{
+                float: right;
+                padding-right: 65px;
+                padding-top: 10px;
+            }
+        }
+    }
+    .favorites{
+        li{
+            list-style: none;
+        }
+        
+    }
+}
+

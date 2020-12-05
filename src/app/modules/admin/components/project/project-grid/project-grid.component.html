@@ -1,0 +1,50 @@
+<table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8">
+
+  <ng-container matColumnDef="idProject">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id Proyecto </th>
+    <td mat-cell *matCellDef="let element"> {{element.idProject}} </td>
+  </ng-container>
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+  <ng-container matColumnDef="projectNumber">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Número de proyecto </th>
+    <td mat-cell *matCellDef="let element"> {{element.projectNumber}} </td>
+  </ng-container>
+  <ng-container matColumnDef="startDate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de inicio </th>
+    <td mat-cell *matCellDef="let element"> {{(element.startDate)?(moment(element.startDate).format('DD/MM/YYYY')):''}} </td>
+  </ng-container>
+  <ng-container matColumnDef="endDate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de fin </th>
+    <td mat-cell *matCellDef="let element"> {{(element.endDate)?(moment(element.endDate).format('DD/MM/YYYY')):''}} </td>
+  </ng-container>
+  <ng-container matColumnDef="projectManager">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Contacto </th>
+    <td mat-cell *matCellDef="let element"> {{element.projectManager}} </td>
+  </ng-container>
+  <ng-container matColumnDef="options">
+    <th mat-header-cell *matHeaderCellDef>
+
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="delete(row)">
+          <mat-icon>delete</mat-icon>
+          <span>Eliminar</span>
+        </button>
+        <button mat-menu-item (click)="edit(row)">
+          <mat-icon>edit</mat-icon>
+          <span>Editar</span>
+        </button>
+      </mat-menu>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

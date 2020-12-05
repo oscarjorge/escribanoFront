@@ -1,0 +1,136 @@
+@import "../../../../../less/@media-size.less";
+@import "../../../../../less/@colors.less";
+.main {
+    background-color: @color-primary-700;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #fff;
+    top: 0;
+
+    a.navbar-brand {
+        // color: #fff;
+        // font-weight: 600;
+        @letters-width: 108.9px;
+        @letters-height: 20.4px;
+        @logo-width: 18.72px;
+        @logo-height: 13.36px;
+        .container-logo{
+          background-color: @color-neutral-8;
+          border-radius: 3px;
+          img{
+            zoom: 0.05;
+          }
+          // position: relative;
+          // .letters{
+          //   width: unit(@letters-width, px);
+          //   height: unit(@letters-height, px);
+          // }
+          // .container-img-logo{
+          //   position: absolute;
+          //   top: unit((@logo-height / 2) + @letters-height * -1, px);
+          //   left:unit(@letters-width, px);
+          //   .logo{
+          //     width: unit(@logo-width, px);
+          //     height: unit(@logo-height, px);
+          //   }
+          // }
+
+        }
+    }
+
+    nav{
+        background-color: @color-primary-700;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        color: #fff;
+        top: 0;
+
+      min-height: @top-bar-height;
+      display: flex;
+      //Sobreescribo el z-index del nav porque bootstrap le da 1030 y las notificaciones de material tienen 1011 y las tapa.
+      z-index: 1000;
+      .left{
+        display: flex;
+        align-items: center;
+        >span:nth-of-type(2){
+          margin-left:2em;
+          @media @bootstrap-xs{
+            margin-left: .5em;
+            font-size: .8em;
+          }
+        }
+      }
+      .right{
+        // display: block;
+        // text-align: center;
+        display: flex;
+        align-items: center;
+        .navbar-toggler{
+          background-color: transparent;
+        }
+        .avatar{
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+        }
+      }
+    }
+    side-bar.active{
+      -webkit-animation: aniActive 2s forwards;
+      -webkit-animation-delay: 0.10s;
+      animation: aniActive 2s forwards;
+      animation-delay: 0.10s;
+    }
+    side-bar{
+      visibility: hidden;
+    }
+
+    @-webkit-keyframes aniActive {
+      100% { visibility: visible; }
+    }
+
+    @keyframes aniActive {
+      100% { visibility: visible; }
+    }
+
+    .hamburger.active {
+        -webkit-transition: all 0.10s ease-in-out;
+        -o-transition: all 0.10s ease-in-out;
+        transition: all 0.10s ease-in-out;
+        -webkit-transition-delay: 0.10s;
+        -o-transition-delay: 0.10s;
+        transition-delay: 0.10s;
+      }
+      .hamburger.active .line:nth-child(1) {
+        -webkit-transition-delay: 0.10s;
+        -o-transition-delay: 0.10s;
+        transition-delay: 0.10s;
+        transform: translateY(8px) rotate(45deg);
+      }
+      .hamburger.active .line:nth-child(2) {
+        width: 0;
+      }
+      .hamburger.active .line:nth-child(3) {
+        -webkit-transition-delay: 0.10s;
+        -o-transition-delay: 0.10s;
+        transition-delay: 0.10s;
+        transform: translateY(-6px) rotate(-45deg);
+      }
+
+    .hamburger:hover {
+        cursor: pointer;
+      }
+    .hamburger .line {
+      width: 25px;
+      height: 3px;
+      background-color: #ecf0f1;
+      display: block;
+      margin: 4px auto;
+      -webkit-transition: all 0.10s ease-in-out;
+      -o-transition: all 0.10s ease-in-out;
+      transition: all 0.10s ease-in-out;
+      }
+}
+

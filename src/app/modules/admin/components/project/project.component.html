@@ -1,0 +1,27 @@
+<top-bar></top-bar>
+<div class="container">
+<card-extended  [id]="'card-grid'">
+  <card-extended-title>
+    <span>Proyectos</span>
+  </card-extended-title>
+  <card-extended-icon>
+    <span class="fas  fa-briefcase"></span>
+  </card-extended-icon>
+  <card-extended-actions>
+      <mat-icon color="primary" (click)="add()">add</mat-icon>
+  </card-extended-actions>
+  <card-extended-panel>
+      <admin-project-grid [items]="items" (onDelete)="delete($event)"  (onEdit)="edit($event)"></admin-project-grid>
+  </card-extended-panel>
+</card-extended>
+<card-extended [id]="'card-edit'" [expanded]="false">
+    <card-extended-title>
+        <span>{{titleEdit}}</span>
+    </card-extended-title>
+    <card-extended-panel>
+        <admin-project-form [item]="itemEditing" (onSave)="save($event)"></admin-project-form>
+    </card-extended-panel>
+  </card-extended>
+</div>
+
+<app-loading [loading]="loading"></app-loading>

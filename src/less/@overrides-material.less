@@ -1,0 +1,69 @@
+@import "./@colors.less";
+.mat-form-field.theme-white{
+    color:@color-neutral-8;
+    //icono
+    .mat-icon{
+        color:@color-neutral-8;
+    }
+    //texto que se escribe
+    .mat-input-element{
+        color:@color-neutral-8;
+        caret-color: @color-neutral-8;
+    }
+    //label
+    .mat-form-field-label.ng-star-inserted{
+        color:@color-neutral-8;
+        &:focus{
+            color:brown !important  ;
+        }
+    }
+    //underline
+    .mat-form-field-underline{
+
+        background-color:@color-neutral-8;
+    }
+    &.mat-form-field-invalid{
+        .mat-form-field-underline{
+            .mat-form-field-ripple{
+                background-color:@color-ruby;
+            }
+
+        }
+    }
+
+}
+.mat-form-field{
+    font-size: 14px;
+    .mat-datepicker-toggle.white {
+        color:@color-neutral-8 !important;
+    }
+    .mat-form-field-suffix.white{
+        color: @color-primary;
+    }
+}
+.mat-slide-toggle{
+    font-size: 14px;
+}
+.mat-chip.mat-standard-chip{
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: inline-flex;
+    padding: 7px 12px;
+    border-radius: 16px;
+    align-items: center;
+    cursor: default;
+    min-height: 32px;
+    height: 1px;
+
+    &.mat-primary{
+        background-color: @color-primary;
+        color: @color-neutral-8;
+    }
+    &.mat-accent{
+        background-color: @color-red-r1;
+        color: @color-neutral-8;
+    }
+}
+.mat-progress-spinner circle, .mat-spinner circle{
+    stroke:@color-primary;
+}
+

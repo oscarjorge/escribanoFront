@@ -1,0 +1,47 @@
+<form *ngIf="item" [formGroup]="form">
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Nick" formControlName="nickName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Nombre" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Apellidos" formControlName="surname">
+    </mat-form-field>
+
+    <mat-slide-toggle formControlName="active">Activo</mat-slide-toggle>
+    <mat-slide-toggle formControlName="admin">Administrador</mat-slide-toggle>
+
+  </div>
+  <div>
+      <custom-card title="Proyectos asignados">
+          <table class="table body-content">
+              <thead>
+                <tr>
+                    <th scope="col">Número de proyecto</th>
+                  <th scope="col">Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="pointer" (click)="clickRowProject(projectUser.project)" *ngFor="let projectUser of item?.projectUser">
+                    <td>{{projectUser.project.projectNumber}}</td>
+                    <td>{{projectUser.project.description}}</td>
+                </tr>
+
+              </tbody>
+            </table>
+      </custom-card>
+
+  </div>
+  <div>
+    <custom-card title="Imagen de perfil">
+      <custom-file-uploader class="body-content" (onUploaded)="uploaded($event)" (onError)="error($event)" [url]="url"
+        [multiple]="multiple">
+      </custom-file-uploader>
+    </custom-card>
+
+  </div>
+
+  <button mat-raised-button color="accent" class="float-right" (click)="save()">Guardar</button>
+</form>

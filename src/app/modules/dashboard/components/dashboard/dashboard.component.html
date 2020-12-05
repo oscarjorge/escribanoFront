@@ -1,0 +1,66 @@
+<top-bar></top-bar>
+<div>
+  <!-- navbar de bootstrap tiene un display flex y un justify-content de space-between -->
+  <nav class="navbar">
+    <mat-chip-list class="chips-breadcrumb">
+      <ng-container *ngFor="let breadcrumb of breadcrumbs; let last = last">
+        <mat-chip color="primary" *ngIf="breadcrumb!=item" [disabled]="true"
+          (click)="navigateTo($event, breadcrumb, false)" [ngClass]="{last:last, clickable:breadcrumbs.length>1}">
+          {{breadcrumb.title}}
+        </mat-chip>
+        <mat-chip *ngIf="breadcrumb==item" [ngClass]="{last:last, clickable:breadcrumbs.length>1}">
+          {{breadcrumb.title}}
+        </mat-chip>
+      </ng-container>
+    </mat-chip-list>
+    <mat-form-field>
+      <input matInput placeholder="Filtrar" [(ngModel)]="filter">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </nav>
+  <div class="container-fluid content">
+    <div class="row  justify-content-md-start mx-0" @fadeIn
+      *ngIf="menuService.favorites && menuService.favorites.menuFavorites && menuService.favorites.menuFavorites.length>0">
+      <span class="span-favorites">Favoritos</span>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <mat-chip-list class="chips-favorites">
+            <mat-chip color="primary" @fadeIn *ngFor="let option of menuService.favorites.menuFavorites"
+              [matTooltip]="option.title" class="pointer" (click)="navigateTo($event, option, false)">
+              <div class="pointer">
+                <i [ngClass]="option.icon" class="mr-2 favorite-icon-menu"></i>
+                <span class="favorite-title">{{option.title}}</span>
+              </div>
+              <i *ngIf="option.type==2" class="ml-2 favorite-icon-favorite"
+                [ngClass]="{'pointer':true, 'far': !option.favorite, 'fas': option.favorite, 'fa-heart':true}"
+                (click)="menuService.favorite($event, option)"></i>
+            </mat-chip>
+          </mat-chip-list>
+        </li>
+      </ul>
+    </div>
+    <div class="row justify-content-md-start mx-0" *ngIf="item && item.items && item.items.length">
+      <ng-container *ngFor="let option of item.items | visibleFilter: true">
+        <div (click)="navigateTo($event, option, false)" @fadeIn
+          *ngIf="option.title.toLowerCase().includes(filter.toLowerCase())"
+          class="col-md-2 col-4 menu-option-card-container pb-0">
+          <span *ngIf="option.type!==menuItemType.Option && option.visibleItemsTitle>0"
+            class="badge badge-danger">{{option.visibleItemsTitle}}</span>
+          <div class="menu-option-card">
+            <i [ngClass]="option.icon"></i>
+            <h1>
+              {{option.title}}
+            </h1>
+            <p class="d-none d-md-block pb-0 m-0">{{option.review}}</p>
+            <div class="text-center favorite">
+              <i *ngIf="option.type==2"
+                [ngClass]="{'pointer':true, 'far': !option.favorite, 'fas': option.favorite, 'fa-heart':true}"
+                (click)="menuService.favorite($event, option)"></i>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+

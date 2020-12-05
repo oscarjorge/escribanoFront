@@ -1,0 +1,28 @@
+<top-bar></top-bar>
+<div class="container">
+    <card-extended  [id]="'card-grid'">
+        <card-extended-title>
+          <span>Usuarios</span>
+        </card-extended-title>
+        <card-extended-icon>
+          <span class="fas fa-users-cog"></span>
+        </card-extended-icon>
+        <card-extended-panel>
+            <admin-user-grid [items]="items" (onEdit)="edit($event)" (onDelete)="delete($event)"  (onForward)="forward($event)"></admin-user-grid>
+        </card-extended-panel>
+      </card-extended>
+      <card-extended  [id]="'card-edit'">
+          <card-extended-title>
+            <span>{{userTitle}}</span>
+          </card-extended-title>
+          <card-extended-actions *ngIf=" itemEditing?.pic">
+              <img class="avatar" [attr.src]="'data:image/jpg;base64,' + itemEditing?.pic | safeBlob">
+          </card-extended-actions>
+          <card-extended-panel>
+              <admin-user-form [item]="itemEditing" [roles]="roles" (onSave)="save($event)" (onUploaded)="uploaded($event)"></admin-user-form>
+          </card-extended-panel>
+        </card-extended>
+
+</div>
+
+<app-loading [loading]="loading"></app-loading>

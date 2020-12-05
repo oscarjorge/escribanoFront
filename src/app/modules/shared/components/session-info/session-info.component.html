@@ -1,0 +1,17 @@
+<div class="session-info">
+    <small *ngIf="expired">
+        La sesión ha expirado
+    </small>
+
+    <span *ngIf="!expired" class="pointer" (click)="refreshToken()" matTooltip="Pulse para renovar la sesión">
+      <div class="fa-stack hourglass-spin" #hourglass>
+        <i class="fa fa-stack-1x fa-hourglass-start"></i>
+        <i class="fa fa-stack-1x fa-hourglass-half"></i>
+        <i class="fa fa-stack-1x fa-hourglass-end"></i>
+        <i class="fa fa-stack-1x fa-hourglass-end spin"></i>
+      </div>
+    </span>
+    <small *ngIf="!expired" matTooltip="La sesión expira en">
+      <span class="ml-1" #interval></span> ({{authService.changeSessionDuration$ | async}})
+    </small>
+  </div>

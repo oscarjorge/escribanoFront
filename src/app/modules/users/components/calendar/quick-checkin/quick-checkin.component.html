@@ -1,0 +1,173 @@
+<top-bar></top-bar>
+<div class="container">
+  <mat-horizontal-stepper *ngIf="horizontalStepper" [linear]="isLinear" #stepper>
+    <mat-step class="step-project" [optional]="false" [completed]="projectSelected!=null">
+      <ng-template matStepLabel>
+        <i class="fas fa-thumbs-up"
+          [ngClass]="{'fa-thumbs-up': projectSelected!=null,'fa-thumbs-down': projectSelected==null}"></i>
+        Elije un proyecto
+      </ng-template>
+      <div class="container-projects">
+        <div class="project elevation-z pointer" [ngClass]="{'selected': projectUser.project.selected}"
+          *ngFor="let projectUser of projectsUser" (click)="onClickProject(projectUser)">
+          <span
+            *ngIf="projectUser.project.description==EPROJECT_TYPE.LUNCH || projectUser.project.description==EPROJECT_TYPE.ABSENCE"
+            class="fas fa-utensils fa-3x"
+            [ngClass]="{'fa-utensils': projectUser.project.description==EPROJECT_TYPE.LUNCH,'fa-notes-medical': projectUser.project.description==EPROJECT_TYPE.ABSENCE}">
+          </span>
+          <span
+            *ngIf="projectUser.project.description!=EPROJECT_TYPE.LUNCH && projectUser.project.description!=EPROJECT_TYPE.ABSENCE">
+            {{projectUser.project.description}}
+          </span>
+        </div>
+      </div>
+
+      <div class=" buttons-project">
+        <button mat-raised-button matStepperNext>Siguiente</button>
+      </div>
+    </mat-step>
+    <mat-step [optional]="false" [completed]="done">
+      <ng-template matStepLabel>
+        <i class="fas fa-thumbs-up"
+          [ngClass]="{'fa-thumbs-up': done,'fa-thumbs-down': !done}"></i>
+        Verifica
+      </ng-template>
+      <custom-card title="Imputación">
+        <div class="body-content">
+          <ng-container
+            *ngTemplateOutlet="verify">
+          </ng-container>
+        </div>
+
+      </custom-card>
+
+
+      <div class="mt-2 buttons-verify">
+        <button mat-raised-button matStepperPrevious>Volver</button>
+        <button mat-raised-button matStepperNext>Siguiente</button>
+      </div>
+    </mat-step>
+    <mat-step [optional]="false" [completed]="done">
+      <ng-template matStepLabel>
+        <i class="fas fa-thumbs-up" [ngClass]="{'fa-thumbs-up': done,'fa-thumbs-down': !done}"></i>
+        Hecho
+      </ng-template>
+      <custom-card title="Imputación realizada">
+      </custom-card>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+  <mat-vertical-stepper *ngIf="!horizontalStepper" [linear]="isLinear" #stepper>
+    <mat-step class="step-project" [optional]="false" [completed]="projectSelected!=null">
+      <ng-template matStepLabel>
+        <i class="fas fa-thumbs-up"
+          [ngClass]="{'fa-thumbs-up': projectSelected!=null,'fa-thumbs-down': projectSelected==null}"></i>
+        Elige un proyecto
+      </ng-template>
+      <div class="container-projects-vertical">
+        <div class="project elevation-z pointer" [ngClass]="{'selected': projectUser.project.selected}"
+          *ngFor="let projectUser of projectsUser" (click)="onClickProject(projectUser)">
+          <span
+            *ngIf="projectUser.project.description==EPROJECT_TYPE.LUNCH || projectUser.project.description==EPROJECT_TYPE.ABSENCE"
+            class="fas fa-utensils fa-2x"
+            [ngClass]="{'fa-utensils': projectUser.project.description==EPROJECT_TYPE.LUNCH,'fa-notes-medical': projectUser.project.description==EPROJECT_TYPE.ABSENCE}">
+          </span>
+          <span
+            *ngIf="projectUser.project.description!=EPROJECT_TYPE.LUNCH && projectUser.project.description!=EPROJECT_TYPE.ABSENCE">
+            {{projectUser.project.description}}
+          </span>
+        </div>
+      </div>
+
+      <div class=" buttons-project">
+        <button mat-raised-button matStepperNext>Siguiente</button>
+      </div>
+    </mat-step>
+    <mat-step [optional]="false" [completed]="done">
+      <ng-template matStepLabel>
+        <i class="fas fa-thumbs-up"
+          [ngClass]="{'fa-thumbs-up': done,'fa-thumbs-down': !done}"></i>
+        Verifica
+      </ng-template>
+      <custom-card title="Imputación">
+        <div class="body-content">
+            <ng-container
+              *ngTemplateOutlet="verify">
+            </ng-container>
+        </div>
+
+      </custom-card>
+
+
+      <div class="mt-2 buttons-verify">
+        <button mat-raised-button matStepperPrevious>Volver</button>
+        <button mat-raised-button matStepperNext>Siguiente</button>
+      </div>
+    </mat-step>
+    <mat-step [optional]="false" [completed]="done">
+      <ng-template matStepLabel>
+        <i class="fas fa-thumbs-up" [ngClass]="{'fa-thumbs-up': done,'fa-thumbs-down': !done}"></i>
+        Hecho
+      </ng-template>
+      <custom-card title="Imputación realizada">
+      </custom-card>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+  <card-extended [expanded]="false">
+      <card-extended-title>
+        <span>Localización</span>
+      </card-extended-title>
+      <card-extended-panel>
+          <div class="body-content">
+              <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                <agm-marker [latitude]="lat" [longitude]="lng">
+                </agm-marker>
+              </agm-map>
+            </div>
+      </card-extended-panel>
+    </card-extended>
+</div>
+
+<ng-template #verify>
+    <div class="container-verify">
+        <div>
+          <span>Proyecto sobre el que se va a imputar:</span>
+          <span>{{projectSelected?.description}}</span>
+        </div>
+        <div>
+          <span>
+            Hora de entrada
+          </span>
+          <span>
+            {{checkinToAdd?.startDateMoment?.format('DD/MM/YYYY (HH:mm:ss)')}}
+
+          </span>
+        </div>
+        <div>
+          <span>
+            Hora de salida
+          </span>
+          <span>
+            {{checkinToAdd?.endDateMoment?.format('DD/MM/YYYY (HH:mm:ss)')}}
+          </span>
+        </div>
+        <div>
+          <span>
+            Geolocalización
+          </span>
+          <span>
+            Ver mapa
+          </span>
+        </div>
+        <div class="btn-apply">
+          <button mat-raised-button color="accent" (click)="verifyDone()" [disabled]="done">Aceptar</button>
+        </div>
+      </div>
+</ng-template>

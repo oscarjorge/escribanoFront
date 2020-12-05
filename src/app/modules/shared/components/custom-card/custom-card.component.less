@@ -1,0 +1,53 @@
+@import "../../../../../less/@colors.less";
+mat-card{
+    font-size: 12px;
+    margin: .5em;
+    mat-card-header{
+        display: block;
+        .mat-card-header-text{
+            display: none;
+        }
+        .first-row{
+            display: flex;
+            justify-content: space-between;
+            .left{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                width: 100%;
+                .title{
+                    margin: 0px;
+                    .mat-card-title{
+                        margin: 0px;
+                    }
+                    .mat-card-subtitle{
+                        margin: 0px;
+                    }
+                }
+                .first-row-icon{
+                    span, mat-icon{
+                        font-size: 2em;
+                        padding: .3em .3em .3em 0;
+                        min-width:35px;
+                    }
+                }
+            }
+            .right{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .mat-icon{
+                    color: @color-primary;
+                }
+            }
+        }
+    }
+    .body-container{
+        padding: 0;
+        &.overflow-scroll{
+            overflow: scroll;
+            overflow-y: auto;
+            overflow-x: auto;
+        }
+    }
+  }

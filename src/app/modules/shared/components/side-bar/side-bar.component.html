@@ -1,0 +1,45 @@
+<div class="side-bar">
+
+  <div class="grid-item">
+      <div class="input-group">
+          <input class="form-control" placeholder="Filtrar" aria-describedby="id" [(ngModel)]="filter">
+        </div>
+    <div class="menu-side-bar">
+      <ul class="sidebar-nav">
+        <li *ngIf="!!menu && !!menu.parent" (click)="upLevel(menu.id)" [attr.title]="menu.title" class="folder">
+          <i class="fas fa-arrow-up"></i>{{menu.title}}
+        </li>
+        <ng-container *ngFor="let item of (menu || {items: []}).items">
+          <li [attr.class]="'menu-type-'+item.type" *ngIf="item.title.toLowerCase().includes(filter.toLowerCase())" (click)="navigateTo($event,item, true)">
+            <i [ngClass]="item.icon"></i>{{item.title}}
+            <span *ngIf="0<item.visibleItemsQty()" class="badge badge-pill badge-light float-right">{{item.visibleItemsQty()}}</span>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+    <div class="favorites">
+        <ul *ngIf="!!menuService.favorites && menuService.favorites.menuFavorites.length>0">
+          <li>
+            <mat-chip-list class="chips-favorites">
+              <mat-chip color="primary" @fadeIn @fadeOut *ngFor="let option of menuService.favorites.menuFavorites" [matTooltip]="option.title"
+                class="pointer" (click)="navigateTo($event, option, true)">
+                <div class="pointer">
+                  <i [ngClass]="option.icon" class="mr-2 favorite-icon-menu"></i>
+                  <span class="favorite-title">{{option.title}}</span>
+                </div>
+                <i *ngIf="option.type==2" class="ml-2 favorite-icon-favorite" [ngClass]="{'pointer':true, 'far': !option.favorite, 'fas': option.favorite, 'fa-heart':true}"
+                  (click)="menuService.favorite($event, option)"></i>
+              </mat-chip>
+            </mat-chip-list>
+          </li>
+        </ul>
+      </div>
+  </div>
+
+  <div class="grid-item">
+      <!-- <shared-user-info></shared-user-info> -->
+  </div>
+</div>
+
+
+
